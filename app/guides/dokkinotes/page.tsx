@@ -6,6 +6,15 @@ import {
   Shield, Database, Ban, Search, Fingerprint 
 } from 'lucide-react';
 
+// Метаданные для Google Search Console (решают проблему индексации)
+export const metadata = {
+  title: 'DokkiNotes Guide | Secure AI Notes',
+  description: 'Official user manual for DokkiNotes. Learn about end-to-end encryption, AI voice transcription, and self-destructing notes.',
+  alternates: {
+    canonical: 'https://www.dokki.org/guides/dokkinotes',
+  },
+};
+
 export default function DokkiNotesGuide() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#E0E0E0] font-sans selection:bg-[#00BCD4]/30 pb-20">

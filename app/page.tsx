@@ -2,6 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sparkles, ArrowRight, BookOpen } from 'lucide-react';
+export const metadata = {
+  title: 'Dokki | Secure AI Ecosystem',
+  description: 'Dokki is a privacy-first ecosystem featuring Dokki Manager and DokkiNotes. Secure your digital life with AI-powered tools and encryption.',
+  alternates: {
+    canonical: 'https://www.dokki.org/',
+  },
+};
 
 export default function EcosystemHub() {
   return (
