@@ -6,7 +6,6 @@ import { ArrowLeft, Download } from 'lucide-react';
 export default function DokkiAIDeepDive() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
-      
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 z-50 px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-[#004977] transition-all">
           <ArrowLeft size={16} /> Ecosystem
@@ -30,37 +29,30 @@ export default function DokkiAIDeepDive() {
         </div>
         <div className="relative h-[600px] flex justify-center">
            <div className="relative w-[280px] h-full rounded-[3rem] shadow-2xl border-[8px] border-slate-900 overflow-hidden">
-              <Image src="/ds-screenshot3.png" alt="Dashboard" fill className="object-cover" />
+              {/* Исправлено: используем синий скриншот для синего приложения */}
+              <Image src="/dn-screenshot3.png" alt="Dokki AI Dashboard" fill className="object-cover" />
            </div>
         </div>
       </section>
 
       <section className="py-24 px-6 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-[#004977] mb-4">Localized Intelligence</h2>
-            <p className="text-slate-500">Full support for English, Arabic (RTL), and Russian.</p>
-          </div>
           <div className="grid md:grid-cols-3 gap-8">
              <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
-                <Image src="/ds-screenshot1.png" alt="EN" width={200} height={430} className="rounded-3xl shadow-lg" />
+                <Image src="/dn-screenshot1.png" alt="EN" width={200} height={430} className="rounded-3xl shadow-lg" />
                 <span className="font-black text-xs uppercase text-slate-400 tracking-widest">English</span>
              </div>
              <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
-                <Image src="/ds-screenshot2.png" alt="AR" width={200} height={430} className="rounded-3xl shadow-lg" />
+                <Image src="/dn-screenshot2.png" alt="AR" width={200} height={430} className="rounded-3xl shadow-lg" />
                 <span className="font-black text-xs uppercase text-slate-400 tracking-widest">Arabic</span>
              </div>
              <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
-                <Image src="/ds-screenshot4.png" alt="RU" width={200} height={430} className="rounded-3xl shadow-lg" />
+                <Image src="/dn-screenshot4.png" alt="RU" width={200} height={430} className="rounded-3xl shadow-lg" />
                 <span className="font-black text-xs uppercase text-slate-400 tracking-widest">Russian</span>
              </div>
           </div>
         </div>
       </section>
-
-      <footer className="py-12 px-6 text-center text-[10px] font-black uppercase tracking-widest text-slate-300">
-        I.T.C Solutions FZE • Trade License 10103
-      </footer>
     </div>
   );
 }
