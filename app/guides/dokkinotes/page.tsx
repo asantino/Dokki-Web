@@ -1,71 +1,68 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ShieldAlert } from 'lucide-react';
+import { ArrowLeft, ShieldAlert, Mic, Trash2, Lock } from 'lucide-react';
 
 export default function DokkiNotesOfficialGuide() {
   return (
-    <div style={{
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-      maxWidth: '800px',
-      margin: '0 auto',
-      padding: '40px 20px',
-      backgroundColor: '#0A0A0A',
-      color: '#E0E0E0',
-      minHeight: '100vh'
-    }}>
-      <header style={{ marginBottom: '40px' }}>
-        <Link href="/" style={{ color: '#9E9E9E', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-          <ArrowLeft size={16} /> Back to Hub
-        </Link>
-      </header>
+    <div className="min-h-screen bg-[#0A0A0A] text-[#E0E0E0] font-sans p-6 md:p-20">
+      <div className="max-w-3xl mx-auto">
+        <header className="mb-16">
+          <Link href="/" className="flex items-center gap-2 text-[#9E9E9E] hover:text-white transition-all text-sm font-bold">
+            <ArrowLeft size={16} /> BACK TO ECOSYSTEM
+          </Link>
+        </header>
 
-      <section style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <div style={{
-          fontSize: '48px',
-          fontWeight: '700',
-          background: 'linear-gradient(135deg, #FFD700 0%, #b47e23 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          marginBottom: '16px'
-        }}>
-          DokkiNotes Official Guide
+        <section className="text-center mb-20">
+          <h1 className="text-5xl font-black mb-6 bg-gradient-to-r from-[#FFD700] to-[#b47e23] bg-clip-text text-transparent italic">
+            DokkiNotes Guide
+          </h1>
+          <p className="text-xl text-[#9E9E9E]">Your notes. Your privacy. No compromises.</p>
+        </section>
+
+        {/* CRITICAL WARNING */}
+        <section className="bg-red-950/30 border-2 border-red-500 rounded-3xl p-8 mb-16">
+          <div className="flex items-center gap-4 mb-6 text-red-500">
+            <ShieldAlert size={32} />
+            <h2 className="text-2xl font-black uppercase tracking-tight">CRITICAL: Security Policy</h2>
+          </div>
+          <p className="text-lg leading-relaxed text-white mb-4 italic">
+            "Your Password is your Encryption Key."
+          </p>
+          <p className="text-[#B0B0B0] leading-relaxed">
+            If you change your password, all previous notes will be lost forever. We do not store your keys, so password recovery is impossible. This is the price of absolute privacy.
+          </p>
+        </section>
+
+        <div className="space-y-12">
+          <div className="flex gap-6">
+            <Mic className="text-[#b47e23] shrink-0" size={28} />
+            <div>
+              <h3 className="text-xl font-bold mb-2">AI Voice Transcription</h3>
+              <p className="text-[#9E9E9E]">Record your thoughts. Our local AI converts speech to text instantly while maintaining encryption.</p>
+            </div>
+          </div>
+
+          <div className="flex gap-6">
+            <Trash2 className="text-[#b47e23] shrink-0" size={28} />
+            <div>
+              <h3 className="text-xl font-bold mb-2">Ephemeral Notes</h3>
+              <p className="text-[#9E9E9E]">Set self-destruct timers for 1 hour or 24 hours. Once the time is up, the data is wiped from the device memory.</p>
+            </div>
+          </div>
+
+          <div className="flex gap-6">
+            <Lock className="text-[#b47e23] shrink-0" size={28} />
+            <div>
+              <h3 className="text-xl font-bold mb-2">Biometric Vault</h3>
+              <p className="text-[#9E9E9E]">Use FaceID or TouchID to unlock the app and individual sensitive notes.</p>
+            </div>
+          </div>
         </div>
-        <p style={{ fontSize: '18px', color: '#9E9E9E' }}>Your notes. Your privacy. No compromises.</p>
-      </section>
 
-      {/* КРИТИЧЕСКОЕ ПРЕДУПРЕЖДЕНИЕ ИЗ ТВОЕГО ГАЙДА */}
-      <section style={{ 
-        backgroundColor: '#2A0A0A', 
-        border: '2px solid #EF5350', 
-        borderRadius: '16px', 
-        padding: '32px', 
-        marginBottom: '60px' 
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', color: '#EF5350' }}>
-          <ShieldAlert size={32} />
-          <h2 style={{ margin: 0, fontSize: '24px', fontWeight: '700' }}>CRITICAL: Password & Encryption</h2>
-        </div>
-        <p style={{ fontSize: '18px', lineHeight: '1.7', color: '#FFFFFF', marginBottom: '16px' }}>
-          <strong>Your Password = Your Encryption Key.</strong>
-        </p>
-        <p style={{ color: '#B0B0B0', lineHeight: '1.6' }}>
-          If you change your password, existing notes will become unreadable. There is no password recovery option because we do not store your keys.
-        </p>
-      </section>
-
-      <section style={{ marginBottom: '40px' }}>
-        <h3 style={{ color: '#FFD700', fontSize: '24px', marginBottom: '20px' }}>Key Features</h3>
-        <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2' }}>
-          <li>🎤 AI-powered voice transcription</li>
-          <li>⏳ Auto-delete notes after 1 or 24 hours</li>
-          <li>🔐 End-to-end encryption</li>
-          <li>📌 PIN lock for individual notes</li>
-        </ul>
-      </section>
-
-      <footer style={{ marginTop: '80px', paddingTop: '20px', borderTop: '1px solid #2A2A2A', textAlign: 'center', color: '#616161', fontSize: '12px' }}>
-        © 2026 I.T.C Solutions FZE. All rights reserved.
-      </footer>
+        <footer className="mt-32 pt-10 border-t border-white/5 text-center text-[#444] text-[10px] font-black uppercase tracking-[0.5em]">
+          © 2026 I.T.C SOLUTIONS FZE
+        </footer>
+      </div>
     </div>
   );
 }
