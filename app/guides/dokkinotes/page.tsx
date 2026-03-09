@@ -1,106 +1,784 @@
 import React from 'react';
-import Link from 'next/link';
-import { ArrowLeft, ShieldAlert, Mic, Trash2, Lock, UserX, Database, Key } from 'lucide-react';
 
-export default function DokkiNotesOfficialGuide() {
+export default function DokkiNotesGuide() {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#E0E0E0] font-sans p-6 md:p-20 selection:bg-[#b47e23]/30">
-      <div className="max-w-3xl mx-auto">
-        <header className="mb-16">
-          <Link href="/" className="flex items-center gap-2 text-[#9E9E9E] hover:text-[#b47e23] transition-all text-sm font-bold uppercase tracking-widest">
-            <ArrowLeft size={16} /> Back to Hub
-          </Link>
-        </header>
+    <div style={{
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      maxWidth: '800px',
+      margin: '0 auto',
+      padding: '40px 20px',
+      backgroundColor: '#0A0A0A',
+      color: '#E0E0E0',
+      minHeight: '100vh'
+    }}>
+      {/* Header */}
+      <header style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div style={{
+          fontSize: '48px',
+          fontWeight: '700',
+          background: 'linear-gradient(135deg, #00BCD4 0%, #00D4DB 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          marginBottom: '16px'
+        }}>
+          DokkiNotes
+        </div>
+        <p style={{
+          fontSize: '18px',
+          color: '#9E9E9E',
+          fontWeight: '300'
+        }}>
+          Your notes. Your privacy. No compromises.
+        </p>
+      </header>
 
-        <section className="mb-20">
-          <h1 className="text-6xl font-black mb-6 bg-gradient-to-r from-[#FFD700] to-[#b47e23] bg-clip-text text-transparent italic tracking-tighter">
-            DokkiNotes Guide
-          </h1>
-          <p className="text-xl text-[#9E9E9E] leading-relaxed italic">The ultimate manual for private communication and secure note-taking.</p>
-        </section>
+      {/* Introduction */}
+      <section style={{ marginBottom: '60px' }}>
+        <h2 style={{
+          fontSize: '32px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          marginBottom: '20px'
+        }}>
+          Welcome to DokkiNotes
+        </h2>
+        <p style={{
+          fontSize: '16px',
+          lineHeight: '1.7',
+          color: '#B0B0B0',
+          marginBottom: '16px'
+        }}>
+          DokkiNotes is a minimalist note-taking app designed for people who value privacy and simplicity. 
+          With AI-powered voice notes, end-to-end encryption, and self-destructing messages, 
+          DokkiNotes gives you complete control over your data.
+        </p>
+        <div style={{
+          backgroundColor: '#1A1A1A',
+          border: '1px solid #2A2A2A',
+          borderRadius: '12px',
+          padding: '24px',
+          marginTop: '24px'
+        }}>
+          <h3 style={{
+            fontSize: '18px',
+            fontWeight: '600',
+            color: '#00BCD4',
+            marginBottom: '16px'
+          }}>
+            Key Features
+          </h3>
+          <ul style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: 0
+          }}>
+            {[
+              '🎤 AI-powered voice transcription',
+              '⏳ Auto-delete notes after 1 or 24 hours',
+              '🔐 End-to-end encryption (your password = your key)',
+              '📌 PIN lock for individual notes',
+              '☁️ Cloud sync with Google Drive',
+              '🏷️ Hashtag organization',
+              '🌙 Dark mode support'
+            ].map((feature, i) => (
+              <li key={i} style={{
+                fontSize: '16px',
+                color: '#B0B0B0',
+                marginBottom: '12px',
+                paddingLeft: '8px'
+              }}>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-        {/* 1. SECURITY & ENCRYPTION */}
-        <section className="mb-20 bg-red-950/20 border border-red-900/50 rounded-[2.5rem] p-10">
-          <div className="flex items-center gap-4 mb-8 text-red-500">
-            <ShieldAlert size={40} />
-            <h2 className="text-3xl font-black uppercase tracking-tight">1. Security Architecture</h2>
-          </div>
-          <div className="space-y-6 text-lg leading-relaxed">
-            <p className="text-white font-bold">"Your Password is your Encryption Key."</p>
-            <p className="text-[#B0B0B0]">
-              DokkiNotes uses end-to-end encryption. When you create a note, it is encrypted locally on your device using your account password as a master key.
-            </p>
-            <div className="p-6 bg-black/40 rounded-2xl border border-red-900/30">
-              <h4 className="text-red-400 font-bold mb-2">IMPORTANT:</h4>
-              <p className="text-sm text-[#9E9E9E]">We do not store your password on our servers. If you change your password in the app settings, the encryption key changes. As a result, all notes created with the old password will remain encrypted with the old key and will be unreadable.</p>
-            </div>
-          </div>
-        </section>
+      {/* Getting Started */}
+      <section style={{ marginBottom: '60px' }}>
+        <h2 style={{
+          fontSize: '32px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          marginBottom: '20px'
+        }}>
+          Getting Started
+        </h2>
 
-        {/* 2. CORE FEATURES */}
-        <section className="mb-20 space-y-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight flex items-center gap-4">
-            <Key className="text-[#b47e23]" /> 2. Key Capabilities
-          </h2>
-          
-          <div className="grid gap-12">
-            <div className="flex gap-8 items-start">
-              <div className="bg-[#b47e23]/10 p-4 rounded-2xl text-[#b47e23] shrink-0"><Mic size={24} /></div>
-              <div>
-                <h3 className="text-xl font-bold mb-3">AI Voice Summarization</h3>
-                <p className="text-[#9E9E9E] leading-relaxed">Record long thoughts or meetings. Our local AI processes the audio and provides a concise text summary. The audio file is never uploaded to any cloud.</p>
-              </div>
-            </div>
+        {/* Creating a Note */}
+        <div style={{ marginBottom: '40px' }}>
+          <h3 style={{
+            fontSize: '24px',
+            fontWeight: '600',
+            color: '#00BCD4',
+            marginBottom: '16px'
+          }}>
+            Creating a Note
+          </h3>
+          <ol style={{
+            paddingLeft: '24px',
+            color: '#B0B0B0',
+            fontSize: '16px',
+            lineHeight: '1.8'
+          }}>
+            <li style={{ marginBottom: '12px' }}>
+              Tap the <strong style={{ color: '#00BCD4' }}>+ button</strong> at the bottom right
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Start typing your note or use the <strong style={{ color: '#FFD700' }}>AI microphone</strong> for voice input
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Add <strong style={{ color: '#00BCD4' }}>#hashtags</strong> to organize your notes
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Tap the back arrow to save automatically
+            </li>
+          </ol>
+        </div>
 
-            <div className="flex gap-8 items-start">
-              <div className="bg-[#b47e23]/10 p-4 rounded-2xl text-[#b47e23] shrink-0"><Trash2 size={24} /></div>
-              <div>
-                <h3 className="text-xl font-bold mb-3">Ephemeral/Self-Destruct Notes</h3>
-                <p className="text-[#9E9E9E] leading-relaxed">You can set a timer for each note. Choose between 1 hour or 24 hours. After the timer expires, the note is completely wiped from your local storage and the database.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-8 items-start">
-              <div className="bg-[#b47e23]/10 p-4 rounded-2xl text-[#b47e23] shrink-0"><Lock size={24} /></div>
-              <div>
-                <h3 className="text-xl font-bold mb-3">Individual Note PIN</h3>
-                <p className="text-[#9E9E9E] leading-relaxed">For extra sensitive data, you can set a secondary PIN for specific notes. This creates a "safe within a safe" inside the app.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. DATA & ACCOUNT */}
-        <section className="mb-20 space-y-10 border-t border-white/5 pt-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight flex items-center gap-4">
-            <Database className="text-[#b47e23]" /> 3. Data Management
-          </h2>
-          
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><UserX className="text-red-500" size={20}/> Account Deletion</h3>
-              <p className="text-[#9E9E9E] leading-relaxed mb-4">
-                You have full control. If you choose to delete your account, all encrypted data, metadata, and summaries are immediately and permanently removed from our systems.
-              </p>
-              <p className="text-sm text-red-400 italic font-bold">Warning: This action is irreversible.</p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold mb-4 italic">Device-Only Storage</h3>
-              <p className="text-[#9E9E9E] leading-relaxed">
-                Most metadata and temporary files are stored only on your device's secure enclave. This ensures that even in the event of a network interception, your content remains invisible.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <footer className="mt-40 pb-20 border-t border-white/5 text-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-[#333] mb-4 pt-10">
-            OFFICIAL DOCUMENTATION — I.T.C SOLUTIONS FZE
+        {/* AI Voice Notes */}
+        <div style={{ marginBottom: '40px' }}>
+          <h3 style={{
+            fontSize: '24px',
+            fontWeight: '600',
+            color: '#FFD700',
+            marginBottom: '16px'
+          }}>
+            AI Voice Notes
+          </h3>
+          <p style={{
+            fontSize: '16px',
+            lineHeight: '1.7',
+            color: '#B0B0B0',
+            marginBottom: '16px'
+          }}>
+            DokkiNotes uses AI to transcribe your voice into text and automatically categorize your notes.
           </p>
-          <p className="text-[9px] text-[#222]">Last Updated: March 2026</p>
-        </footer>
-      </div>
+          <ol style={{
+            paddingLeft: '24px',
+            color: '#B0B0B0',
+            fontSize: '16px',
+            lineHeight: '1.8'
+          }}>
+            <li style={{ marginBottom: '12px' }}>
+              Tap the <strong style={{ color: '#FFD700' }}>gold microphone</strong> icon
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Speak clearly into your device
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              AI will transcribe and organize your note automatically
+            </li>
+          </ol>
+          <div style={{
+            backgroundColor: '#2A1A00',
+            border: '1px solid #FFD700',
+            borderRadius: '8px',
+            padding: '16px',
+            marginTop: '16px'
+          }}>
+            <p style={{
+              fontSize: '14px',
+              color: '#FFD700',
+              margin: 0
+            }}>
+              <strong>Note:</strong> Each AI request costs 1 token. You must be logged in and have tokens to use this feature.
+            </p>
+          </div>
+        </div>
+
+        {/* Auto-Delete */}
+        <div style={{ marginBottom: '40px' }}>
+          <h3 style={{
+            fontSize: '24px',
+            fontWeight: '600',
+            color: '#00BCD4',
+            marginBottom: '16px'
+          }}>
+            Auto-Delete Notes
+          </h3>
+          <p style={{
+            fontSize: '16px',
+            lineHeight: '1.7',
+            color: '#B0B0B0',
+            marginBottom: '16px'
+          }}>
+            Set notes to automatically delete after a specified time for enhanced privacy.
+          </p>
+          <ol style={{
+            paddingLeft: '24px',
+            color: '#B0B0B0',
+            fontSize: '16px',
+            lineHeight: '1.8'
+          }}>
+            <li style={{ marginBottom: '12px' }}>
+              Open a note
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Tap the <strong style={{ color: '#00BCD4' }}>clock icon</strong> in the top right
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Choose <strong>1 hour</strong> or <strong>24 hours</strong>
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              The note will automatically delete when the timer expires
+            </li>
+          </ol>
+        </div>
+
+        {/* PIN Lock */}
+        <div style={{ marginBottom: '40px' }}>
+          <h3 style={{
+            fontSize: '24px',
+            fontWeight: '600',
+            color: '#00BCD4',
+            marginBottom: '16px'
+          }}>
+            PIN Lock for Notes
+          </h3>
+          <p style={{
+            fontSize: '16px',
+            lineHeight: '1.7',
+            color: '#B0B0B0',
+            marginBottom: '16px'
+          }}>
+            Protect sensitive notes with a PIN code or biometric authentication.
+          </p>
+          <ol style={{
+            paddingLeft: '24px',
+            color: '#B0B0B0',
+            fontSize: '16px',
+            lineHeight: '1.8'
+          }}>
+            <li style={{ marginBottom: '12px' }}>
+              Go to <strong style={{ color: '#00BCD4' }}>Settings</strong>
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Enable the <strong>PIN Lock</strong> toggle
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Set your 4-digit PIN code
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              In any note, tap the <strong style={{ color: '#00BCD4' }}>lock icon</strong> to protect it
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Locked notes require PIN or biometric auth to view
+            </li>
+          </ol>
+        </div>
+
+        {/* Cloud Sync */}
+        <div style={{ marginBottom: '40px' }}>
+          <h3 style={{
+            fontSize: '24px',
+            fontWeight: '600',
+            color: '#00BCD4',
+            marginBottom: '16px'
+          }}>
+            Cloud Sync (Google Drive)
+          </h3>
+          <p style={{
+            fontSize: '16px',
+            lineHeight: '1.7',
+            color: '#B0B0B0',
+            marginBottom: '16px'
+          }}>
+            Sync your encrypted notes across devices using Google Drive.
+          </p>
+          <ol style={{
+            paddingLeft: '24px',
+            color: '#B0B0B0',
+            fontSize: '16px',
+            lineHeight: '1.8'
+          }}>
+            <li style={{ marginBottom: '12px' }}>
+              Go to <strong style={{ color: '#00BCD4' }}>Settings</strong>
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Enable the <strong>Cloud Sync</strong> toggle
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Sign in with your Google account
+            </li>
+            <li style={{ marginBottom: '12px' }}>
+              Your notes will sync automatically
+            </li>
+          </ol>
+          <div style={{
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #00BCD4',
+            borderRadius: '8px',
+            padding: '16px',
+            marginTop: '16px'
+          }}>
+            <p style={{
+              fontSize: '14px',
+              color: '#00BCD4',
+              margin: 0
+            }}>
+              <strong>Privacy:</strong> Notes are encrypted before uploading. Only you can decrypt them with your password.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Critical Warning */}
+      <section style={{ marginBottom: '60px' }}>
+        <div style={{
+          backgroundColor: '#2A0A0A',
+          border: '2px solid #EF5350',
+          borderRadius: '12px',
+          padding: '32px',
+          textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '64px', marginBottom: '16px' }}>⚠️</div>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: '700',
+            color: '#FFFFFF',
+            marginBottom: '16px'
+          }}>
+            Your Password = Your Encryption Key
+          </h2>
+          <p style={{
+            fontSize: '18px',
+            lineHeight: '1.7',
+            color: '#EF5350',
+            marginBottom: '20px'
+          }}>
+            <strong>If you change your password, existing notes will become unreadable.</strong>
+          </p>
+          <p style={{
+            fontSize: '16px',
+            lineHeight: '1.7',
+            color: '#B0B0B0'
+          }}>
+            DokkiNotes uses your password as the encryption key. This means:
+          </p>
+          <ul style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: '20px 0 0 0',
+            textAlign: 'left',
+            maxWidth: '500px',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          }}>
+            <li style={{
+              fontSize: '16px',
+              color: '#B0B0B0',
+              marginBottom: '12px',
+              paddingLeft: '24px',
+              position: 'relative'
+            }}>
+              <span style={{
+                position: 'absolute',
+                left: 0,
+                color: '#EF5350'
+              }}>•</span>
+              Your notes are encrypted with your password
+            </li>
+            <li style={{
+              fontSize: '16px',
+              color: '#B0B0B0',
+              marginBottom: '12px',
+              paddingLeft: '24px',
+              position: 'relative'
+            }}>
+              <span style={{
+                position: 'absolute',
+                left: 0,
+                color: '#EF5350'
+              }}>•</span>
+              Changing your password changes the encryption key
+            </li>
+            <li style={{
+              fontSize: '16px',
+              color: '#B0B0B0',
+              marginBottom: '12px',
+              paddingLeft: '24px',
+              position: 'relative'
+            }}>
+              <span style={{
+                position: 'absolute',
+                left: 0,
+                color: '#EF5350'
+              }}>•</span>
+              Old notes encrypted with the old password cannot be decrypted
+            </li>
+            <li style={{
+              fontSize: '16px',
+              color: '#B0B0B0',
+              paddingLeft: '24px',
+              position: 'relative'
+            }}>
+              <span style={{
+                position: 'absolute',
+                left: 0,
+                color: '#EF5350'
+              }}>•</span>
+              There is no password recovery option
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Settings Overview */}
+      <section style={{ marginBottom: '60px' }}>
+        <h2 style={{
+          fontSize: '32px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          marginBottom: '20px'
+        }}>
+          Settings Overview
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gap: '20px'
+        }}>
+          {/* Theme */}
+          <div style={{
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #2A2A2A',
+            borderRadius: '12px',
+            padding: '20px'
+          }}>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#00BCD4',
+              marginBottom: '12px'
+            }}>
+              🌙 Theme
+            </h3>
+            <p style={{
+              fontSize: '15px',
+              color: '#B0B0B0',
+              margin: 0
+            }}>
+              Switch between Dark and Light mode
+            </p>
+          </div>
+
+          {/* Sort */}
+          <div style={{
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #2A2A2A',
+            borderRadius: '12px',
+            padding: '20px'
+          }}>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#00BCD4',
+              marginBottom: '12px'
+            }}>
+              📊 Sort
+            </h3>
+            <p style={{
+              fontSize: '15px',
+              color: '#B0B0B0',
+              margin: 0
+            }}>
+              Sort notes by date (newest first) or alphabetically (A-Z)
+            </p>
+          </div>
+
+          {/* Tokens */}
+          <div style={{
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #2A2A2A',
+            borderRadius: '12px',
+            padding: '20px'
+          }}>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#FFD700',
+              marginBottom: '12px'
+            }}>
+              💰 Token Balance
+            </h3>
+            <p style={{
+              fontSize: '15px',
+              color: '#B0B0B0',
+              margin: 0
+            }}>
+              View your AI token balance and purchase more tokens
+            </p>
+          </div>
+
+          {/* Trash */}
+          <div style={{
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #2A2A2A',
+            borderRadius: '12px',
+            padding: '20px'
+          }}>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#EF5350',
+              marginBottom: '12px'
+            }}>
+              🗑️ Trash
+            </h3>
+            <p style={{
+              fontSize: '15px',
+              color: '#B0B0B0',
+              margin: 0
+            }}>
+              View and restore deleted notes (notes are permanently deleted after 30 days)
+            </p>
+          </div>
+
+          {/* About */}
+          <div style={{
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #2A2A2A',
+            borderRadius: '12px',
+            padding: '20px'
+          }}>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#00BCD4',
+              marginBottom: '12px'
+            }}>
+              ℹ️ About
+            </h3>
+            <p style={{
+              fontSize: '15px',
+              color: '#B0B0B0',
+              margin: 0
+            }}>
+              Learn more about DokkiNotes and view app information
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy & Security */}
+      <section style={{ marginBottom: '60px' }}>
+        <h2 style={{
+          fontSize: '32px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          marginBottom: '20px'
+        }}>
+          Privacy & Security
+        </h2>
+        <p style={{
+          fontSize: '16px',
+          lineHeight: '1.7',
+          color: '#B0B0B0',
+          marginBottom: '20px'
+        }}>
+          DokkiNotes is built with privacy as the foundation:
+        </p>
+        <ul style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: 0
+        }}>
+          {[
+            {
+              icon: '🔐',
+              title: 'End-to-End Encryption',
+              desc: 'All notes are encrypted with AES encryption using your password as the key'
+            },
+            {
+              icon: '☁️',
+              title: 'Encrypted Cloud Storage',
+              desc: 'Notes synced to Google Drive are encrypted before upload'
+            },
+            {
+              icon: '🔒',
+              title: 'Local Storage',
+              desc: 'Notes are stored locally on your device in an encrypted SQLite database'
+            },
+            {
+              icon: '🚫',
+              title: 'No Analytics',
+              desc: 'We don\'t track your activity or collect personal data'
+            },
+            {
+              icon: '⏳',
+              title: 'Self-Destruct',
+              desc: 'Auto-delete feature ensures sensitive notes are permanently removed'
+            }
+          ].map((item, i) => (
+            <li key={i} style={{
+              backgroundColor: '#1A1A1A',
+              border: '1px solid #2A2A2A',
+              borderRadius: '12px',
+              padding: '20px',
+              marginBottom: '16px'
+            }}>
+              <div style={{
+                fontSize: '32px',
+                marginBottom: '12px'
+              }}>
+                {item.icon}
+              </div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '600',
+                color: '#00BCD4',
+                marginBottom: '8px'
+              }}>
+                {item.title}
+              </h3>
+              <p style={{
+                fontSize: '15px',
+                color: '#B0B0B0',
+                margin: 0
+              }}>
+                {item.desc}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Tips & Tricks */}
+      <section style={{ marginBottom: '60px' }}>
+        <h2 style={{
+          fontSize: '32px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          marginBottom: '20px'
+        }}>
+          Tips & Tricks
+        </h2>
+        <div style={{
+          backgroundColor: '#1A1A1A',
+          border: '1px solid #2A2A2A',
+          borderRadius: '12px',
+          padding: '24px'
+        }}>
+          <ul style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: 0
+          }}>
+            {[
+              'Swipe left on a note to delete it',
+              'Use #hashtags to organize notes into categories',
+              'Tap the filter icon to view notes by hashtag',
+              'Long press the AI microphone for quick voice notes',
+              'Use the search bar to find notes by title or content',
+              'Enable biometric authentication for faster PIN unlock',
+              'Check your token balance before using AI features'
+            ].map((tip, i) => (
+              <li key={i} style={{
+                fontSize: '16px',
+                color: '#B0B0B0',
+                marginBottom: '16px',
+                paddingLeft: '32px',
+                position: 'relative'
+              }}>
+                <span style={{
+                  position: 'absolute',
+                  left: 0,
+                  color: '#00BCD4',
+                  fontSize: '20px'
+                }}>
+                  •
+                </span>
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Support */}
+      <section style={{ marginBottom: '60px' }}>
+        <h2 style={{
+          fontSize: '32px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          marginBottom: '20px'
+        }}>
+          Need Help?
+        </h2>
+        <p style={{
+          fontSize: '16px',
+          lineHeight: '1.7',
+          color: '#B0B0B0',
+          marginBottom: '20px'
+        }}>
+          If you have questions or need assistance:
+        </p>
+        <div style={{
+          backgroundColor: '#1A1A1A',
+          border: '1px solid #00BCD4',
+          borderRadius: '12px',
+          padding: '24px',
+          textAlign: 'center'
+        }}>
+          <p style={{
+            fontSize: '16px',
+            color: '#B0B0B0',
+            marginBottom: '16px'
+          }}>
+            Visit our website for more information:
+          </p>
+          <a
+            href="https://www.dokki.org"
+            style={{
+              display: 'inline-block',
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#00BCD4',
+              textDecoration: 'none',
+              padding: '12px 24px',
+              border: '2px solid #00BCD4',
+              borderRadius: '8px',
+              transition: 'all 0.3s'
+            }}
+          >
+            dokki.org →
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{
+        textAlign: 'center',
+        paddingTop: '40px',
+        borderTop: '1px solid #2A2A2A',
+        marginTop: '60px'
+      }}>
+        <div style={{
+          fontSize: '24px',
+          fontWeight: '600',
+          background: 'linear-gradient(135deg, #00BCD4 0%, #00D4DB 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          marginBottom: '12px'
+        }}>
+          DokkiNotes
+        </div>
+        <p style={{
+          fontSize: '14px',
+          color: '#757575',
+          margin: 0
+        }}>
+          Your notes. Your privacy. No compromises.
+        </p>
+        <p style={{
+          fontSize: '12px',
+          color: '#616161',
+          marginTop: '20px'
+        }}>
+          © 2026 Dokki. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
