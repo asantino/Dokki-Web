@@ -6,7 +6,6 @@ import { ArrowLeft, Clock, Fingerprint } from 'lucide-react';
 export default function DokkiNotesDeepDive() {
   return (
     <div className="min-h-screen bg-[#0c0c0c] text-white font-sans selection:bg-[#b47e23]/30">
-      
       <header className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-white/5 z-50 px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-sm font-bold text-white/40 hover:text-[#b47e23] transition-all">
           <ArrowLeft size={16} /> Hub
@@ -30,7 +29,8 @@ export default function DokkiNotesDeepDive() {
         </div>
         <div className="relative h-[600px] flex justify-center">
            <div className="relative w-[280px] h-full rounded-[3rem] shadow-2xl border-[8px] border-[#222] overflow-hidden">
-              <Image src="/dn-screenshot3.png" alt="Main List" fill className="object-cover" />
+              {/* DN = Dokki Notes (Золотой) */}
+              <Image src="/dn-screenshot3.png" alt="DokkiNotes Dashboard" fill className="object-cover" />
            </div>
         </div>
       </section>
@@ -38,26 +38,21 @@ export default function DokkiNotesDeepDive() {
       <section className="py-24 px-6 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <div className="flex justify-center order-2 md:order-1">
-             <Image src="/dn-screenshot4.png" alt="Timers" width={250} height={540} className="rounded-[2.5rem] shadow-2xl border-4 border-[#222]" />
+             <Image src="/dn-screenshot4.png" alt="DokkiNotes Features" width={250} height={540} className="rounded-[2.5rem] shadow-2xl border-4 border-[#222]" />
           </div>
           <div className="order-1 md:order-2">
-            <Clock className="text-[#b47e23] mb-6" size={48} />
             <h2 className="text-4xl font-black mb-6 tracking-tight">Ephemeral Protection</h2>
             <p className="text-lg text-white/40 mb-10 leading-relaxed">Set 1h or 24h self-destruct timers for sensitive notes.</p>
             <div className="flex gap-6 items-center p-6 bg-white/5 rounded-3xl border border-white/10">
                <Fingerprint className="text-[#b47e23]" size={32} />
                <div>
-                  <h4 className="font-bold">FaceID Security</h4>
+                  <h4 className="font-bold text-[#b47e23]">FaceID Security</h4>
                   <p className="text-xs text-white/30">Protect individual thoughts with biometric lock.</p>
                </div>
             </div>
           </div>
         </div>
       </section>
-
-      <footer className="py-12 px-6 bg-black border-t border-white/5 text-center text-[9px] font-black uppercase tracking-widest text-white/20">
-        I.T.C Solutions FZE • License 10103 • Umm Al Quwain, UAE
-      </footer>
     </div>
   );
 }

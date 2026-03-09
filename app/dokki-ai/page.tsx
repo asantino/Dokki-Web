@@ -29,8 +29,8 @@ export default function DokkiAIDeepDive() {
         </div>
         <div className="relative h-[600px] flex justify-center">
            <div className="relative w-[280px] h-full rounded-[3rem] shadow-2xl border-[8px] border-slate-900 overflow-hidden">
-              {/* Исправлено: используем синий скриншот для синего приложения */}
-              <Image src="/dn-screenshot3.png" alt="Dokki AI Dashboard" fill className="object-cover" />
+              {/* DS = Dokki Scanner (Синий) */}
+              <Image src="/ds-screenshot3.png" alt="Dokki AI Dashboard" fill className="object-cover" />
            </div>
         </div>
       </section>
@@ -39,15 +39,15 @@ export default function DokkiAIDeepDive() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
              <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
-                <Image src="/dn-screenshot1.png" alt="EN" width={200} height={430} className="rounded-3xl shadow-lg" />
+                <Image src="/ds-screenshot1.png" alt="EN" width={200} height={430} className="rounded-3xl shadow-lg" />
                 <span className="font-black text-xs uppercase text-slate-400 tracking-widest">English</span>
              </div>
              <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
-                <Image src="/dn-screenshot2.png" alt="AR" width={200} height={430} className="rounded-3xl shadow-lg" />
+                <Image src="/ds-screenshot2.png" alt="AR" width={200} height={430} className="rounded-3xl shadow-lg" />
                 <span className="font-black text-xs uppercase text-slate-400 tracking-widest">Arabic</span>
              </div>
              <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
-                <Image src="/dn-screenshot4.png" alt="RU" width={200} height={430} className="rounded-3xl shadow-lg" />
+                <Image src="/ds-screenshot4.png" alt="RU" width={200} height={430} className="rounded-3xl shadow-lg" />
                 <span className="font-black text-xs uppercase text-slate-400 tracking-widest">Russian</span>
              </div>
           </div>
